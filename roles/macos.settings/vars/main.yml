@@ -1,0 +1,61 @@
+macos_my_settings:
+  # Basics
+  ## F1,F2 keys are as use default function key.
+  - domain: NSGlobalDomain
+    key: com.apple.keyboard.fnState
+    type: bool
+    value: true
+  ## Show save-dialog always expanded state.
+  - domain: NSGlobalDomain
+    key: NSNavPanelExpandedStateForSaveMode
+    type: bool
+    value: true
+  ## Show file extension always.
+  - domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+  ## Don't create .DS_Store files on network volumes.
+  - domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
+    type: string
+    value: yes
+  ## Scroll direction as natural.
+  - domain: NSGlobalDomain
+    key: com.apple.swipescrolldirection
+    type: bool
+    value: true
+  ## Enable taps to click on trackpad.
+  - domain: com.apple.AppleMultitouchTrackpad
+    key: Clicking
+    type: int
+    value: 1
+
+  # Finder
+  ## Show status bar
+  - domain: com.apple.finder
+    key: ShowStatusBar
+    type: bool
+    value: true
+  ## Show path bar
+  - domain: com.apple.finder
+    key: ShowPathBar
+    type: bool
+    value: true
+  ## Show tab bar
+  - domain: com.apple.finder
+    key: ShowTabView
+    type: bool
+    value: true
+  ## Don't ask comfirmation to change file extension.
+  - domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning
+    type: bool
+    value: false
+
+  # Dock
+  ## Change default dock size
+  - domain: com.apple.dock
+    key: tilesize
+    type: int
+    value: 50
