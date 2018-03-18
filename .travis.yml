@@ -3,7 +3,6 @@ os: osx
 osx_image: xcode9.2 # macOS Sierra (OS X 10.12)
 
 before_install:
-  - brew upgrade
   - brew update
 
 install:
