@@ -1,0 +1,46 @@
+homebrew_taps:
+  - homebrew/binary
+  - homebrew/versions
+  - homebrew/dupes
+  - caskroom/cask
+  - caskroom/versions
+  - caskroom/fonts
+  - neovim/neovim
+  - mackerelio/mackerel-agent
+homebrew_packages:
+  - { name: readline }
+  - { name: openssl }
+  - { name: fish }
+  - { name: bash }
+  - { name: zsh }
+  - { name: fzf }
+  - { name: git }
+  - { name: jq }
+  - { name: nkf }
+  - { name: nmap }
+  - { name: mtr }
+  - { name: tree }
+  - { name: neovim }
+  - { name: highlight }
+  - { name: wget }
+  - { name: httpie }
+  - { name: yarn }
+  # GNU
+  - { name: coreutils }
+  - { name: gnu-sed }
+  - { name: gawk}
+  # PHP
+  - { name: bison27 }
+  - { name: pcre }
+  - { name: zlib }
+  - { name: re2c }
+  - { name: libjpeg }
+  - { name: libpng }
+  - { name: libmcrypt }
+  - { name: autoconf }
+  - { name: automake }
+  # mackerel
+  - { name: mkr }
+  # brewcask
+  - { name: brew-cask, state: absent, install_options: force }
+  
