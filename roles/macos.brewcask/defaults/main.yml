@@ -15,7 +15,7 @@ homebrew_cask_packages:
   - { name: iterm2 }
   - { name: karabiner-elements }
   - { name: recordit }
-  - { name: seil }
+  # - { name: seil }
   - { name: sequel-pro }
   - { name: slack }
   - { name: vagrant }
