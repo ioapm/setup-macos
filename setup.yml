@@ -8,3 +8,4 @@
     timezone: Asia/Tokyo
   roles:
     - macos.settings
+    - macos.homebrew

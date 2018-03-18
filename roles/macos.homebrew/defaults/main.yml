@@ -1,8 +1,5 @@
 homebrew_taps:
-  - homebrew/binary
-  - homebrew/versions
-  - homebrew/dupes
-  - caskroom/cask
+  - caskroom/homebrew-cask
   - caskroom/versions
   - caskroom/fonts
   - neovim/neovim
