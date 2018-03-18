@@ -1,5 +1,6 @@
-setup-macos
----
+# setup-macos
+[![Build Status](https://travis-ci.org/ioapm/setup-macos.svg?branch=master)](https://travis-ci.org/ioapm/setup-macos)
+
 Setup my macbook.
 
 ## Getting started
