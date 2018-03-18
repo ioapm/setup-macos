@@ -1,0 +1,23 @@
+homebrew_cask_packages:
+  - { name: 1password }
+  - { name: alfred }
+  - { name: cyberduck }
+  - { name: dash }
+  - { name: dashlane }
+  - { name: docker }
+  - { name: dropbox }
+  - { name: firefox }
+  - { name: gitkraken }
+  - { name: gitscout }
+  - { name: goofy }
+  - { name: google-chrome }
+  - { name: google-japanese-ime }
+  - { name: iterm2 }
+  - { name: karabiner-elements }
+  - { name: recordit }
+  # - { name: seil }
+  - { name: sequel-pro }
+  - { name: slack }
+  - { name: vagrant }
+  - { name: virtualbox }
+  - { name: visual-studio-code }

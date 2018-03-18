@@ -9,3 +9,4 @@
   roles:
     - macos.settings
     - macos.homebrew
+    - macos.brewcask
