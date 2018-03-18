@@ -1,0 +1,15 @@
+language: generic
+os: osx
+osx_image: xcode9.2 # macOS Sierra (OS X 10.12)
+
+before_install:
+  - brew upgrade
+  - brew update
+
+install:
+  - xcode-select -p
+  - sudo xcode-select --switch /Library/Developer/CommandLineTools/
+  - brew install ansible
+
+script:
+  - travis_wait 80 ansible-playbook setup.yml -vv -i hosts
