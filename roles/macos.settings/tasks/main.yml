@@ -1,0 +1,9 @@
+- name: Change maxos settings
+  osx_defaults: >
+    domain={{ item.domain }}
+    key={{ item.key }}
+    type={{ item.type }}
+    value={{ item.value }}
+  with_items:
+    - '{{ macos_my_settings }}'
+  notify: killall
