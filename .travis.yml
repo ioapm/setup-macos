@@ -4,6 +4,7 @@ osx_image: xcode9.2 # macOS Sierra (OS X 10.12)
 
 before_install:
   - brew update
+  - brew unlink python
 
 install:
   - xcode-select -p
