@@ -1,0 +1,7 @@
+anyenv_languages:
+  - phpenv
+  - ndenv
+  - pyenv
+  - rbenv
+  - goenv
+  - jenv
