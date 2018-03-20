@@ -12,3 +12,4 @@
     - macos.brewcask
     - macos.fonts
     - develop.anyenv
+    - develop.php
