@@ -10,3 +10,4 @@
     - macos.settings
     - macos.homebrew
     - macos.brewcask
+    - develop.anyenv
