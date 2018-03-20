@@ -1,3 +1,3 @@
 - name: phpenv global
   command: ~/.anyenv/envs/phpenv/bin/phpenv global {{ item }}
-  with_items: {{ php_global_version }}
+  with_items: '{{ php_global_version }}'

@@ -1,4 +1,4 @@
 - name: Install PHP with phpenv
   shell: ~/.anyenv/envs/phpenv/bin/phpenv install {{ item }}
-  with_items: {{ php_versions }}
+  with_items: '{{ php_versions }}'
   notify: phpenv global
