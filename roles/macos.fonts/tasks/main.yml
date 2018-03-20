@@ -1,4 +1,4 @@
 - name: Install Fira Code
-  homebrew_cask: name={{ item }} state=latest
+  homebrew_cask: name={{ item }} state={{ item.state | default('present') }}
   with_items:
-    - font-fira-code
+    - { name: font-fira-code }
