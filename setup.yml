@@ -10,4 +10,5 @@
     - macos.settings
     - macos.homebrew
     - macos.brewcask
+    - macos.fonts
     - develop.anyenv
