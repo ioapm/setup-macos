@@ -1,17 +1,14 @@
-- name: Export anyenv
-  shell: eval "$(~/.anyenv/bin/anyenv init -)"
-
 - name: List installed versions
-  shell: rbenv versions
+  shell: eval "$(~/.anyenv/bin/anyenv init -)" && rbenv versions
   register: installed_versions
 
 - name: Installing ruby when not yet
-  shell: rbenv install {{ item.version }}
+  shell: eval "$(~/.anyenv/bin/anyenv init -)" && rbenv install {{ item.version }}
   with_items: '{{ ruby_versions }}'
   when: "installed_versions.stdout.find('{{ item.version }}') == -1"
 
 - name: Set global ruby version
-  shell: rbenv global {{ item.version }}
+  shell: eval "$(~/.anyenv/bin/anyenv init -)" && rbenv global {{ item.version }}
   with_items: '{{ ruby_versions }}'
   when: '{{ item.global | default(false) }}'
 
