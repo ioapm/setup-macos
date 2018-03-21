@@ -11,3 +11,7 @@
   shell: eval "$(~/.anyenv/bin/anyenv init -)" && pyenv global {{ item.version }}
   with_items: '{{ python_versions }}'
   when: '{{ item.global | default(false) }}'
+
+- name: Install packages
+  shell: pip install --upgrade {{ item }}
+  with_items: '{{ packages }}'
