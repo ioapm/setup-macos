@@ -1,3 +1,0 @@
-- name: rbenv global
-  command: ~/.anyenv/envs/rbenv/bin/rbenv global {{ item }}
-  with_items: '{{ ruby_global_version }}'
