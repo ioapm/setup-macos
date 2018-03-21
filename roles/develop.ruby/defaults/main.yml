@@ -4,3 +4,9 @@ ruby_versions:
 
 ruby_global_version:
   - 2.5.0
+
+install_global_gems:
+  - bundler
+  - jekyll
+  - travis
+  - i2cssh

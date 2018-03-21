@@ -2,3 +2,7 @@
   shell: ~/.anyenv/envs/rbenv/bin/rbenv install {{ item }}
   with_items: '{{ ruby_versions }}'
   notify: rbenv global
+
+- name: Install RubyGems for global
+  shell: gem i {{ item }}
+  with_items: '{{ install_global_gems }}'
