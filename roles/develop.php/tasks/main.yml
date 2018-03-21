@@ -1,4 +1,13 @@
-- name: Install PHP with phpenv
-  shell: ~/.anyenv/envs/phpenv/bin/phpenv install {{ item }}
+- name: List installed versions
+  shell: eval "$(~/.anyenv/bin/anyenv init -)" && phpenv versions
+  register: installed_versions
+
+- name: Install php
+  shell: eval "$(~/.anyenv/bin/anyenv init -)" && phpenv install {{ item.version }}
   with_items: '{{ php_versions }}'
-  notify: phpenv global
+  when: "installed_versions.stdout.find('{{ item.version }}') == -1"
+
+- name: Set global php version
+  shell: eval "$(~/.anyenv/bin/anyenv init -)" && phpenv global {{ item.version }}
+  with_items: '{{ php_versions }}'
+  when: '{{ item.global | default(false) }}'
