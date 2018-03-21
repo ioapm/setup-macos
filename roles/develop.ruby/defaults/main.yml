@@ -1,9 +1,6 @@
 ruby_versions:
-  - 2.4.3
-  - 2.5.0
-
-ruby_global_version:
-  - 2.5.0
+  - { version: 2.4.3 }
+  - { version: 2.5.0, global: true }
 
 install_global_gems:
   - bundler
