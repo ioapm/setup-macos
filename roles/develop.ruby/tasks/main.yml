@@ -15,6 +15,6 @@
   with_items: '{{ ruby_versions }}'
   when: '{{ item.global | default(false) }}'
 
-- name: Install RubyGems for global
+- name: Install rubygems
   shell: gem i {{ item }}
-  with_items: '{{ install_global_gems }}'
+  with_items: '{{ gems }}'

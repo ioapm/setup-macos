@@ -2,7 +2,7 @@ ruby_versions:
   - { version: 2.4.3 }
   - { version: 2.5.0, global: true }
 
-install_global_gems:
+gems:
   - bundler
   - jekyll
   - travis
