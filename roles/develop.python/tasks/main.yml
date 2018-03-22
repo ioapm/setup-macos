@@ -1,0 +1,17 @@
+- name: List installed versions
+  shell: eval "$(~/.anyenv/bin/anyenv init -)" && pyenv versions
+  register: installed_versions
+
+- name: Install python
+  shell: eval "$(~/.anyenv/bin/anyenv init -)" && pyenv install {{ item.version }}
+  with_items: '{{ python_versions }}'
+  when: "installed_versions.stdout.find('{{ item.version }}') == -1"
+
+- name: Set global python version
+  shell: eval "$(~/.anyenv/bin/anyenv init -)" && pyenv global {{ item.version }}
+  with_items: '{{ python_versions }}'
+  when: '{{ item.global | default(false) }}'
+
+- name: Install packages
+  shell: pip install --upgrade {{ item }}
+  with_items: '{{ packages }}'

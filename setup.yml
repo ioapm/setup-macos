@@ -11,6 +11,8 @@
     - macos.homebrew
     - macos.brewcask
     - macos.fonts
+    - develop.fishshell
     - develop.anyenv
     - develop.php
-    - develop.fishshell
+    - develop.python
+    - develop.ruby
