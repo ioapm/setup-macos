@@ -13,4 +13,5 @@
     - macos.fonts
     - develop.anyenv
     - develop.php
+    - develop.python
     - develop.ruby
