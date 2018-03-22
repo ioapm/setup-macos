@@ -1,0 +1,11 @@
+fish_plugins:
+  - { plugin: await }
+  - { plugin: bass }
+  - { plugin: bobthefish }
+  - { plugin: docker-completion }
+  - { plugin: fzf }
+  - { plugin: get }
+  - { plugin: getopts }
+  - { plugin: last_job_id }
+  - { plugin: spin }
+  - { plugin: z }

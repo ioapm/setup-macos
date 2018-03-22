@@ -1,0 +1,6 @@
+- name: Install fisherman
+  shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+
+- name: Install plugins
+  shell: eval "$(which fish)" && fisher {{ item.plugin }}
+  with_items: '{{ fish_plugins }}'
