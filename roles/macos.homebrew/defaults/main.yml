@@ -22,6 +22,7 @@ homebrew_packages:
   - { name: wget }
   - { name: httpie }
   - { name: yarn }
+  - { name: kubectl }
   # GNU
   - { name: coreutils }
   - { name: gnu-sed }
