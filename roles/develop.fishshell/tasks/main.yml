@@ -4,3 +4,5 @@
 - name: Install plugins
   shell: eval "$(which fish) -c 'fisher {{ item.plugin }}'"
   with_items: '{{ fish_plugins }}'
+  with:
+    - ci_skip != "true"
