@@ -2,18 +2,18 @@
   shell: eval "$(~/.anyenv/bin/anyenv init -)" && phpenv versions
   register: installed_versions
   when:
-    - xenv_skip != "true"
+    - ci_skip != "true"
 
 - name: Install php
   shell: eval "$(~/.anyenv/bin/anyenv init -)" && phpenv install {{ item.version }}
   with_items: '{{ php_versions }}'
   when:
-    - xenv_skip != "true"
+    - ci_skip != "true"
     - "installed_versions.stdout.find('{{ item.version }}') == -1"
 
 - name: Set global php version
   shell: eval "$(~/.anyenv/bin/anyenv init -)" && phpenv global {{ item.version }}
   with_items: '{{ php_versions }}'
   when:
-    - xenv_skip != "true"
+    - ci_skip != "true"
     - '{{ item.global | default(false) }}'

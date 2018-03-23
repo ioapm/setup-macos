@@ -6,7 +6,7 @@
     user_email: me@ioapm.jp
     github_user: ioapm
     timezone: Asia/Tokyo
-    xenv_skip: "{{ lookup('env', 'XENV_SKIP') }}"
+    ci_skip: "{{ lookup('env', 'CI_SKIP') }}"
   roles:
     - macos.settings
     - macos.homebrew
