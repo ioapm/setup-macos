@@ -23,6 +23,7 @@ homebrew_packages:
   - { name: httpie }
   - { name: yarn }
   - { name: kubectl }
+  - { name: libpq }
   # GNU
   - { name: coreutils }
   - { name: gnu-sed }
