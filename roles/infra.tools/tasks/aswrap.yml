@@ -1,0 +1,2 @@
+- name: Install aswrap
+  shell: curl -Lso /usr/local/bin/aswrap https://github.com/fujiwara/aswrap/releases/download/v0.0.3/aswrap && chmod +x /usr/local/bin/aswrap
