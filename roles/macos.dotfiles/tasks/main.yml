@@ -1,0 +1,4 @@
+- name: Create dotfile symlinks
+  file: src={{ playbook_dir }}/roles/macos.dotfiles/{{ item.path }} dest={{ item.dest }} state=link
+  with_items:
+    - { path: templates/.bash_profile, dest: ~/.bash_profile }
