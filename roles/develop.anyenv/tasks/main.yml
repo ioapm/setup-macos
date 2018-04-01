@@ -9,5 +9,5 @@
     state=directory
 
 - name: Install anyenv languages
-  shell: ~/.anyenv/bin/anyenv install -f {{ item }} && exec $SHELL -l creates=~/.anyenv/envs/{{ item }}
+  shell: . ~/.bash_profile && ~/.anyenv/bin/anyenv install -f {{ item }} && exec $SHELL -l creates=~/.anyenv/envs/{{ item }}
   with_items: '{{ anyenv_languages }}'
