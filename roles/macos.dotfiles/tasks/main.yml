@@ -1,4 +1,14 @@
+- name: File stats
+  stat: 'path={{ item }}'
+  with_items: '{{ templates }}'
+  register: file_stats
+  ignore_errors: true
+
+- name: Remove exists file
+  file: dest={{ item.dest }} state=absent
+  with_items: '{{ file_stats.results }}'
+  when: item.stat.exists is defined and item.stat.exists
+
 - name: Create dotfile symlinks
   file: src={{ playbook_dir }}/roles/macos.dotfiles/{{ item.path }} dest={{ item.dest }} state=link
-  with_items:
-    - { path: templates/bash_profile, dest: ~/.bash_profile }
+  with_items: '{{ templates }}'
