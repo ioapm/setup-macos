@@ -1,0 +1,22 @@
+- name: File stats
+  stat: 
+    path: '{{ item.dest }}'
+  with_items: '{{ templates }}'
+  register: file_stats
+  ignore_errors: true
+
+- name: Remove exists file
+  file:
+    dest: '{{ item }}'
+    state: absent
+  with_items: '{{ file_stats.results }}'
+  when:
+    - item.stat.exists is defined
+    - item.stat.exists
+
+- name: Create dotfile symlinks
+  file:
+    src: '{{ playbook_dir }}/roles/macos.dotfiles/{{ item.path }}'
+    dest: '{{ item.dest }}'
+    state: link
+  with_items: '{{ templates }}'

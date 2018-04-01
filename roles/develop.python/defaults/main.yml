@@ -1,6 +1,6 @@
 python_versions:
   - { version: 2.7.14, global: true }
-  - { version: 3.6.4,  global: true }
+  - { version: 3.6.5,  global: true }
 
 packages:
   - pip

@@ -1,25 +1,25 @@
 - name: List installed versions
-  shell: eval "$(~/.anyenv/bin/anyenv init -)" && pyenv versions
+  shell: . ~/.bash_profile && pyenv versions
   register: installed_versions
   when:
     - ci_skip != "true"
 
 - name: Install python
-  shell: eval "$(~/.anyenv/bin/anyenv init -)" && pyenv install {{ item.version }}
+  shell: . ~/.bash_profile && pyenv install {{ item.version }}
   with_items: '{{ python_versions }}'
   when:
     - ci_skip != "true"
     - "installed_versions.stdout.find('{{ item.version }}') == -1"
 
 - name: Set global python version
-  shell: eval "$(~/.anyenv/bin/anyenv init -)" && pyenv global {{ item.version }}
+  shell: . ~/.bash_profile && pyenv global {{ item.version }}
   with_items: '{{ python_versions }}'
   when:
     - ci_skip != "true"
     - '{{ item.global | default(false) }}'
 
 - name: Install packages
-  shell: pip install --upgrade {{ item }}
+  shell: . ~/.bash_profile && pip install --upgrade {{ item }}
   with_items: '{{ packages }}'
   when:
     - ci_skip != "true"

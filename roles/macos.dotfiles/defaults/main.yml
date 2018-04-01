@@ -1,0 +1,2 @@
+templates:
+  - { path: templates/bash_profile, dest: ~/.bash_profile }
