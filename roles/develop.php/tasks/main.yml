@@ -1,18 +1,18 @@
 - name: List installed versions
-  shell: eval "$(~/.anyenv/bin/anyenv init -)" && phpenv versions
+  shell: . ~/.bash_profile && phpenv versions
   register: installed_versions
   when:
     - ci_skip != "true"
 
 - name: Install php
-  shell: eval "$(~/.anyenv/bin/anyenv init -)" && phpenv install {{ item.version }}
+  shell: . ~/.bash_profile && phpenv install {{ item.version }}
   with_items: '{{ php_versions }}'
   when:
     - ci_skip != "true"
     - "installed_versions.stdout.find('{{ item.version }}') == -1"
 
 - name: Set global php version
-  shell: eval "$(~/.anyenv/bin/anyenv init -)" && phpenv global {{ item.version }}
+  shell: . ~/.bash_profile && phpenv global {{ item.version }}
   with_items: '{{ php_versions }}'
   when:
     - ci_skip != "true"

@@ -1,18 +1,18 @@
 - name: List installed versions
-  shell: eval "$(~/.anyenv/bin/anyenv init -)" && rbenv versions
+  shell: . ~/.bash_profile && rbenv versions
   register: installed_versions
   when:
     - ci_skip != "true"
 
 - name: Installing ruby when not yet
-  shell: eval "$(~/.anyenv/bin/anyenv init -)" && rbenv install {{ item.version }}
+  shell: . ~/.bash_profile && rbenv install {{ item.version }}
   with_items: '{{ ruby_versions }}'
   when:
     - ci_skip != "true"
     - "installed_versions.stdout.find('{{ item.version }}') == -1"
 
 - name: Set global ruby version
-  shell: eval "$(~/.anyenv/bin/anyenv init -)" && rbenv global {{ item.version }}
+  shell: . ~/.bash_profile && rbenv global {{ item.version }}
   with_items: '{{ ruby_versions }}'
   when:
     - ci_skip != "true"
