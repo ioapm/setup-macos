@@ -6,4 +6,5 @@ gems:
   - bundler
   - jekyll
   - travis
-  - i2cssh
+  # Install failed on macOS High Sierra
+  # - i2cssh
