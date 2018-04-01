@@ -19,7 +19,7 @@
     - '{{ item.global | default(false) }}'
 
 - name: Install rubygems
-  shell: gem i {{ item }}
+  shell: . ~/.bash_profile && gem i {{ item }}
   with_items: '{{ gems }}'
   when:
     - ci_skip != "true"

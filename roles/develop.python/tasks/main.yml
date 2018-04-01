@@ -19,7 +19,7 @@
     - '{{ item.global | default(false) }}'
 
 - name: Install packages
-  shell: pip install --upgrade {{ item }}
+  shell: . ~/.bash_profile && pip install --upgrade {{ item }}
   with_items: '{{ packages }}'
   when:
     - ci_skip != "true"
