@@ -3,8 +3,12 @@
   with_items: '{{ homebrew_cask_packages }}'
   notify:
     - brew cask doctor
+  when:
+    - ci_skip != "true"
 
 - name: Clean up outdated brewcask packages
   shell: brew cask cleanup --outdated
   register: brew_cask_cleanup_result
   changed_when: "brew_cask_cleanup_result.stdout.find('Nothing to do') != -1"
+  when:
+    - ci_skip != "true"
