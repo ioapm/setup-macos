@@ -3,13 +3,11 @@ homebrew_cask_packages:
   - { name: alfred }
   - { name: cyberduck }
   - { name: dash }
-  - { name: dashlane }
+  # - { name: dashlane }
   - { name: docker }
   - { name: dropbox }
   - { name: firefox }
   - { name: gitkraken }
-  - { name: gitscout }
-  - { name: goofy }
   - { name: google-chrome }
   - { name: google-japanese-ime }
   - { name: iterm2 }
