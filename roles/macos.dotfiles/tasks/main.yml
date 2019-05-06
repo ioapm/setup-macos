@@ -1,22 +1,10 @@
-- name: File stats
-  stat: 
-    path: '{{ item.dest }}'
-  with_items: '{{ templates }}'
-  register: file_stats
-  ignore_errors: true
+- name: Copy .gitignore
+  template:
+    src: gitignore.j2
+    dest: /Users/{{ user_os_name }}/.gitignore
 
-- name: Remove exists file
-  file:
-    dest: '{{ item }}'
-    state: absent
-  with_items: '{{ file_stats.results }}'
-  when:
-    - item.stat.exists is defined
-    - item.stat.exists
-
-- name: Create dotfile symlinks
-  file:
-    src: '{{ playbook_dir }}/roles/macos.dotfiles/{{ item.path }}'
-    dest: '{{ item.dest }}'
-    state: link
-  with_items: '{{ templates }}'
+- name: Copy .gitignore_global
+  copy:
+    src: ../files/gitignore_global
+    dest: /Users/{{ user_os_name }}/.gitignore_global
+    mode: 0644
