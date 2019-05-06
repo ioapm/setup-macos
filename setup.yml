@@ -3,8 +3,9 @@
   connection: local
   vars:
     user_name: Tsukasa Nishiyama
-    user_email: me@ioapm.jp
-    github_user: ioapm
+    user_email: tukaelu82@gmail.com
+    user_os_name: tuka
+    github_user: tukaelu
     timezone: Asia/Tokyo
     ci_skip: "{{ lookup('env', 'CI_SKIP') }}"
   roles:
