@@ -1,0 +1,16 @@
+---
+
+- name: download zplug
+  uri:
+    url: https://raw.githubusercontent.com/zplug/installer/master/installer.zsh
+    return_content: yes
+  register: installer_shell
+
+- name: install zlug
+  shell: '{{ installer_shell.content }}'
+
+- name: copy .zplug.zsh
+  copy:
+    src: ../files/zplug.zsh
+    dest: /Users/{{ user_os_name }}/.zplug.zsh
+    mode: 0644

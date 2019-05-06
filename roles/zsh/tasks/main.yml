@@ -1,0 +1,30 @@
+- name: chsh
+  user:
+    name: '{{ item.name }}'
+    shell: '{{ item.shell }}'
+  with_items:
+    - { name: tuka, shell: '/usr/local/bin/zsh' }
+
+- name: copy files
+  copy:
+    src: ../files/{{ item.name }}
+    dest: /Users/{{ user_os_name }}/.{{ item.name }}
+    mode: 0644
+  with_items:
+    - { name: zshrc }
+    - { name: zplug.zsh }
+
+- name: create ~/.zsh
+  file:
+    path: /Users/{{ user_os_name }}/.zsh
+    state: directory
+    mode: 0755
+
+- name: download zplug
+  uri:
+    url: https://raw.githubusercontent.com/zplug/installer/master/installer.zsh
+    return_content: yes
+  register: installer_shell
+
+- name: install zlug
+  shell: '{{ installer_shell.content }}'

@@ -14,7 +14,7 @@
     - macos.brewcask
     - macos.fonts
     - macos.dotfiles
-    - develop.fishshell
+    - zsh
     - develop.anyenv
     - develop.php
     - develop.python
